@@ -25,7 +25,7 @@ export class Task {
     if (!originalPath || originalPath.trim().length === 0) {
       throw new Error('Original path cannot be empty');
     }
-    
+
     this.id = id;
     this.price = price;
     this.originalPath = originalPath;

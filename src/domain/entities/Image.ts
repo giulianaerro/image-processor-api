@@ -23,13 +23,12 @@ export class Image {
     if (!/^[a-fA-F0-9]{32}$/.test(md5)) {
       throw new Error('Invalid MD5 format');
     }
-    
+
     this.resolution = resolution;
     this.path = path;
     this.md5 = md5;
     this.createdAt = createdAt;
   }
-
 
   equals(other: Image): boolean {
     return (
