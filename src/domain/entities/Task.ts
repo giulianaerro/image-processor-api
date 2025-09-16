@@ -44,6 +44,29 @@ export class Task {
     );
   }
 
+  static fromDatabase(
+    id: TaskId,
+    status: TaskStatus,
+    price: Price,
+    originalPath: string,
+    createdAt: Date,
+    updatedAt: Date,
+    images: Image[],
+    error?: string
+  ): Task {
+    const task = new Task(
+      id,
+      status,
+      price,
+      originalPath,
+      createdAt,
+      updatedAt,
+      error
+    );
+    task.images = [...images];
+    return task;
+  }
+
   getStatus(): TaskStatus {
     return this.status;
   }
